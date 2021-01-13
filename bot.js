@@ -5,7 +5,6 @@ const chalk = require('chalk');
 const moment = require('moment');
 var Jimp = require('jimp');//tB
 const { Client, Util } = require('discord.js');
-const weather = require('weather-js')//tB//tB
 const fs = require('fs');
 const db = require('quick.db');//tB
 const http = require('http');
@@ -13,10 +12,7 @@ const express = require('express');//tB
 require('./util/eventLoader.js')(client);
 const path = require('path');//tB
 const request = require('request');
-const snekfetch = require('snekfetch');
 const queue = new Map();
-const YouTube = require('simple-youtube-api');
-const ytdl = require('ytdl-core');
 
 
 const app = express();//tB
@@ -141,7 +137,7 @@ client.on('guildMemberAdd', async member => {
   await member.setNickname(`İsim | Yaş`) //yeni gelen kullanıcının adını değiştirme
 let member2 = member.user 
 let zaman = new Date().getTime() - member2.createdAt.getTime()
-var user = member2 
+var user = member2
 var tbzaman = [];
 if(zaman < 604800000) {
 tbzaman = ':x: Tehlikeli'
@@ -150,7 +146,7 @@ tbzaman = `<a:tamam:717296560765141075> Güvenli`}require("moment-duration-forma
  let zaman1 = new Date().getTime() - user.createdAt.getTime()
  const gecen = moment.duration(zaman1).format(` YY [Yıl,] DD [Gün,] HH [Saat,] mm [Dakika,] ss [Saniye]`) 
  let dbayarfalanfilan = await db.fetch(`tbdbayar${member.guild.id}`)
- let message = member.guild.channels.cache.cache.find(x => x.id === `705494119895531714`) //id yazan kısma kanal id'si [orn: register-chat]
+ let message = member.guild.channels.cache.find(x => x.id === '798884159182602302') //id yazan kısma kanal id'si [orn: register-chat]
   const tb = new Discord.MessageEmbed()
  .setTitle(
      "tB public Hoş Geldin"
@@ -169,7 +165,7 @@ tbzaman = `<a:tamam:717296560765141075> Güvenli`}require("moment-duration-forma
 <a:ntro:692828377899597826>**・** **Hesap Açılalı** ${gecen} **Olmuş**
 <a:elmas:692838040657461278>**・** **Bu Kullanıcı** **|** **${tbzaman}**
 `)
-.setColor('#6278c5')
+.setColor('#fff')
 message.send(tb)
  
          });
