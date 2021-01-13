@@ -1,1 +1,0 @@
-# kayit-botu-v2
